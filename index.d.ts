@@ -1,11 +1,11 @@
 declare module 'react-native-search-component' {
-  import {  ViewStyle, TextStyle } from "react-native"
+  import {  ViewStyle, TextStyle, TextInputProps } from "react-native"
   import React from 'react'
 
   export interface SearchComponentProps {
     placeholder?: string;
     placeholderTextColor?: string;
-    onChange: () => void;
+    onChange: TextInputProps["onChange"];
     value: string;
     onSearchClear?: () => void;
     theme?: 'LIGHT' | 'DARK';
@@ -14,9 +14,10 @@ declare module 'react-native-search-component' {
     cancelColor?: string;
     customSearchInputStyle?: ViewStyle;
     customCancelTextStyle?: TextStyle;
-  } 
+    cancelText?: string;
+  }
 
   const SearchComponent: React.ForwardRefRenderFunction<T, SearchComponentProps>;
-  
+
   export default SearchComponent;
 }
